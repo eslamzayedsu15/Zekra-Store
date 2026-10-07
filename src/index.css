@@ -79,4 +79,101 @@
   }
 }
 
+/* ================= First-visit brand intro ================= */
+.intro-curtain {
+  animation: introFadeIn 0.35s ease-out both;
+}
+
+.intro-curtain--out {
+  animation: introFadeOut 0.45s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.intro-logo {
+  animation: introLogoIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.intro-tagline {
+  animation: introTextIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+.intro-bar {
+  transform-origin: right center;
+  animation: introBarFill 1.5s cubic-bezier(0.33, 1, 0.68, 1) 0.15s both;
+}
+
+.intro-glow {
+  animation: introGlow 2.4s ease-in-out infinite;
+}
+
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes introLogoIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introBarFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes introGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-curtain,
+  .intro-curtain--out,
+  .intro-logo,
+  .intro-tagline,
+  .intro-bar,
+  .intro-glow {
+    animation: none;
+  }
+}
+
 

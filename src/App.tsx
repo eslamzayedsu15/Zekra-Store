@@ -8,8 +8,6 @@ import { SmartFrameProduct, Order } from './types';
 import {
   SMART_FRAME_PRODUCT,
   HERO_IMAGE,
-  SMART_FRAME_BLACK,
-  SMART_FRAME_WHITE,
   SMART_FRAME_CLOSEUP,
   DEMO_DIGITAL_MEMORY,
   PAYMENT_CONFIG,
@@ -32,6 +30,7 @@ import { ContactView } from './components/ContactView';
 import { Footer } from './components/Footer';
 import { LegalModal } from './components/LegalModal';
 import { PageTransitionLoader } from './components/PageTransitionLoader';
+import { FirstVisitLoader } from './components/FirstVisitLoader';
 import {
   Sparkles,
   ArrowLeft,
@@ -42,7 +41,6 @@ import {
   CheckCircle2,
   Layers,
   Smartphone,
-  Star,
   Paintbrush,
   Gift,
   ArrowRight,
@@ -251,135 +249,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* ================= 5. BEST SELLERS / FEATURED PRODUCTS ================= */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-xl mx-auto mb-8 space-y-1.5">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#35101F]">
-              الأكثر طلبًا ❤️
-            </h2>
-            <p className="text-xs sm:text-sm text-[#806B72] font-light">
-              هدايا اختارها ناس كتير لذكرياتهم
-            </p>
-          </div>
-
-          {/* Grid of the 2 variations (Black & White editions) with dynamic data */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Card 1: Black Frame Edition */}
-            <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#F1DDE0] shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-right">
-              <div>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#2B101A] mb-4">
-                  <img
-                    src={SMART_FRAME_BLACK}
-                    alt="برواز الذكريات الذكي فريم أسود"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#35101F]/85 backdrop-blur-md text-white text-[11px] font-bold">
-                    الإصدار الأكثر طلباً
-                  </div>
-                  <div className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-white/90 text-[#35101F] text-[10px] font-bold border border-[#F1DDE0]">
-                    فريم أسود
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <h3 className="text-base font-bold text-[#35101F]">
-                    {SMART_FRAME_PRODUCT.name} · فريم أسود
-                  </h3>
-                  <div className="flex items-center text-[#D96A78] text-xs">
-                    <Star className="w-3.5 h-3.5 fill-[#D96A78]" />
-                    <span className="font-mono font-bold ms-1 text-[#35101F]">5.0</span>
-                  </div>
-                </div>
-
-                <p className="text-xs text-[#806B72] font-light leading-relaxed line-clamp-2 mb-3">
-                  أكريليك نقي مقاوم للصدمات، مع شريحة NFC وكود QR يفتح صفحة ذكرياتكم الخاصة بلمسة هاتف.
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-[#F1DDE0] flex items-center justify-between">
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-lg font-black text-[#35101F] font-mono">
-                      {SMART_FRAME_PRODUCT.price} ج.م
-                    </span>
-                    <span className="text-xs text-[#806B72] line-through font-mono">
-                      {SMART_FRAME_PRODUCT.originalPrice} ج.م
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-[#D96A78] font-bold block">
-                    عربون 50 ج.م فقط
-                  </span>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => navigate('/products/smart-memory-frame')}
-                  className="py-2.5 px-5 rounded-xl bg-[#35101F] hover:bg-[#2B101A] text-white text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer"
-                >
-                  اطلب الآن
-                </button>
-              </div>
-            </div>
-
-            {/* Card 2: White Frame Edition */}
-            <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#F1DDE0] shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-right">
-              <div>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#2B101A] mb-4">
-                  <img
-                    src={SMART_FRAME_WHITE}
-                    alt="برواز الذكريات الذكي فريم أبيض"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#35101F] text-[11px] font-bold border border-[#F1DDE0]">
-                    أناقة ونقاء هادئ
-                  </div>
-                  <div className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-white/90 text-[#35101F] text-[10px] font-bold border border-[#F1DDE0]">
-                    فريم أبيض
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <h3 className="text-base font-bold text-[#35101F]">
-                    {SMART_FRAME_PRODUCT.name} · فريم أبيض
-                  </h3>
-                  <div className="flex items-center text-[#D96A78] text-xs">
-                    <Star className="w-3.5 h-3.5 fill-[#D96A78]" />
-                    <span className="font-mono font-bold ms-1 text-[#35101F]">5.0</span>
-                  </div>
-                </div>
-
-                <p className="text-xs text-[#806B72] font-light leading-relaxed line-clamp-2 mb-3">
-                  تصميم مينيمال عصري يمنح مساحتك لمسة نور وسكينة، مناسب لغرف النوم والمكاتب الأنيقة.
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-[#F1DDE0] flex items-center justify-between">
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-lg font-black text-[#35101F] font-mono">
-                      {SMART_FRAME_PRODUCT.price} ج.م
-                    </span>
-                    <span className="text-xs text-[#806B72] line-through font-mono">
-                      {SMART_FRAME_PRODUCT.originalPrice} ج.م
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-[#D96A78] font-bold block">
-                    عربون 50 ج.م فقط
-                  </span>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => navigate('/products/smart-memory-frame')}
-                  className="py-2.5 px-5 rounded-xl bg-[#35101F] hover:bg-[#2B101A] text-white text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer"
-                >
-                  اطلب الآن
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ================= 6. PERSONALIZED / SPECIAL GIFT SECTION ================= */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-6 sm:p-12 border border-[#F1DDE0] shadow-sm">
@@ -493,6 +362,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FFF9F5] text-[#2B101A] flex flex-col font-sans">
+      {/* One-time brand intro, shown on the visitor's first ever visit */}
+      <FirstVisitLoader />
+
       {/* Global Page Transition Loader with official ZEKRA logo */}
       <PageTransitionLoader isLoading={isPageLoading} />
 
