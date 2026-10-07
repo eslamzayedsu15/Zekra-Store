@@ -1,0 +1,6 @@
+{
+  "name": "ZEKRA | ذِكرى — هدايا مخصصة وذكريات رقمية",
+  "description": "متجر ذِكرى للهدايا المخصصة والذكريات الرقمية المزودة بـ QR و NFC — هديتك مش مجرد حاجة، دي ذكرى بتفضل.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

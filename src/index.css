@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-latin: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* ZEKRA Brand Color Palette */
+    --color-primary: #35101F;       /* Deep Plum / Dark Burgundy */
+    --color-secondary: #D96A78;     /* Elegant Rose Pink */
+    --color-accent: #EFA0A8;        /* Soft Romantic Pink */
+    --color-rose-gold: #C9827F;     /* Rose Gold */
+    --color-bg-main: #FFF9F5;       /* Warm Cream */
+    --color-surface: #FFFFFF;       /* Pure White Card/Surface */
+    --color-text-main: #2B101A;     /* Primary Text */
+    --color-text-muted: #806B72;    /* Muted Text */
+    --color-border: #F1DDE0;        /* Subtle Border */
+  }
+
+  body {
+    font-family: var(--font-arabic);
+    color: #2B101A;
+    background-color: #FFF9F5;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-latin {
+    font-family: var(--font-latin);
+  }
+}
+
+/* Hide scrollbars for smooth horizontal mobile swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-page-enter {
+  animation: pageEnter 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 5s ease-in-out infinite;
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
